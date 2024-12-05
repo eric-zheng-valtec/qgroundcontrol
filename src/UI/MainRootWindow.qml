@@ -46,6 +46,35 @@ ApplicationWindow {
         firstRunPromptManager.nextPrompt()
     }
 
+    Button {
+        property int count: 0
+
+        x: 10
+        y: 400
+        z: 1
+        width: 100
+        height: 50
+        text: qsTr("My Button!")
+        onClicked: {
+            count = count + 1
+            l1.text = qsTr("button clicked! ") + count
+        }
+    }
+
+    Label {
+        id: l1
+        x: 10
+        y: 500
+        z: 1
+        width: 100
+        height: 50
+        text: qsTr("Test label!")
+
+        background: Rectangle {
+                    color: "white"
+                }
+    }
+
     QtObject {
         id: firstRunPromptManager
 
